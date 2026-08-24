@@ -8,9 +8,6 @@
 
 <h3 align="center">Machine Learning</h3>
 
-  <p align="center">
-    <a href="https://github.com/KupoKupu/ML"><strong>Explore the files »</strong></a>
-  </p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
