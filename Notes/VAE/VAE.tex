@@ -1,0 +1,225 @@
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+\documentclass[12pt,oneside]{article}
+ % use larger type; default would be 10pt
+
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry}
+
+ % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+%\geometry{margins=2in} % for example, change the margins to 2 inches all round
+%\geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+%\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+%\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+
+
+
+%%% SECTION TITLE APPEARANCE
+
+ % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+%\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+%\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\usepackage[encapsulated]{CJK} 
+
+
+\usepackage{setspace}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amscd}
+\usepackage{hyperref}
+\usepackage{amsthm}
+
+\newcommand{\e}[0]{\varepsilon}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\ra}[0]{\rightarrow}
+\newcommand{\Ra}[0]{\Rightarrow}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\D}[0]{\mathbb{D}}
+\newcommand{\BF}[0]{\mathbb{F}}
+\newcommand{\CN}[0]{\mathcal{N}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\CE}[0]{\mathcal{E}}
+\newcommand{\CM}[0]{\mathcal{M}}
+\newcommand{\CA}[0]{\mathcal{A}}
+\newcommand{\CP}[0]{\mathcal{P}}
+\newcommand{\CT}[0]{\mathcal{T}}
+\newcommand{\cond}[4]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \end{array} \right.}
+\newcommand{\condd}[6]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6}\end{array} \right.}
+\newcommand{\conddd}[8]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6} \\ #7 & \mbox{#8} \end{array} \right.}
+\newcommand{\lams}[1]{\lambda^*(#1)}
+\newcommand{\bs}[0]{\backslash}
+\newcommand{\bM}[0]{\overline{\M}}
+\newcommand{\bmu}[0]{\overline{\mu}}
+\newcommand{\mus}[0]{\mu^*}
+\newcommand{\sa}[0]{\sigma \mbox{-algebra}}
+\newcommand{\set}[1]{\{ #1\}}
+\newcommand{\CB}[0]{\mathcal{B}}
+\newcommand{\CG}[0]{\mathcal{G}}
+\newcommand{\CF}[0]{\mathcal{F}}
+\newcommand{\CU}[0]{\mathcal{U}}
+\newcommand{\CL}[0]{\mathcal{L}}
+\newcommand{\FA}[0]{\mathfrak{A}}
+\newcommand{\BT}[0]{\mathbb{T}}
+\newcommand{\BI}[0]{\mathbb{I}}
+\newcommand{\BE}[0]{\mathbb{E}}
+\newcommand{\eK}[1]{\e\mbox{-Kronecker}(#1)}
+\newcommand{\eKG}[0]{\e\mbox{-Kronecker}}
+\newcommand{\KL}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont KL}}(#1 \ || \ #2)}
+\newcommand{\JS}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont JS}}(#1 \ || \ #2)}
+
+\newcommand{\IN}[1]{I_0(#1)}
+\newcommand{\ING}[0]{I_0}
+\newcommand{\st}[0]{such that }
+\newcommand{\CS}[0]{\mathcal{S}}
+\newcommand{\CC}[0]{\mathcal{C}}
+\newcommand{\tn}[1]{\text{\normalfont #1}}
+
+
+
+\newcommand{\bmp}[1]{\overline{M}^+(#1)}
+\newcommand{\simplep}[2]{S_{#1}^+(#2)}
+\newcommand{\simple}[2]{S_{#1}(#2)}
+\newcommand{\sumf}[2]{\sum_{#1 = #2}^\infty}
+\newcommand{\bigcapf}[2]{\bigcap_{#1 = #2}^\infty}
+\newcommand{\bigcupf}[2]{\bigcup_{#1 = #2}^\infty}
+\newcommand{\limf}[1]{\lim_{#1 \ra \infty}}
+\newcommand{\seq}[2]{\set{#1_{#2}}_{#2=1}^\infty}
+\newcommand{\sg}[1]{\sigma\langle#1\rangle}
+\newcommand{\ag}[1]{\langle#1\rangle}
+\newcommand{\g}[1]{\langle#1\rangle}
+\newcommand{\inte}[0]{\mbox{int}}
+\newcommand{\Cl}[0]{\mbox{cl}}
+\newcommand{\bd}[0]{\mbox{bd}}
+\newcommand{\inv}[1]{{#1}^{-1}}
+\newcommand{\Aut}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Aut}}}
+\newcommand{\Gal}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Gal}}}
+\newcommand{\Bor}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Bor}}}
+\newcommand{\Meas}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Meas}}}
+\newcommand{\ball}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont B}}_{#1}({#2})}
+\newcommand{\supp}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont supp}}}
+\newcommand{\Trig}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Trig}}}
+\newcommand{\sign}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont sign}}}
+\newcommand{\AP}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont AP}}}
+
+\newcommand{\ali}[1]{\begin{align*}#1\end{align*}}
+\newcommand{\zhongwen}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+\renewcommand{\Bar}[1]{\overline{#1}}
+\renewcommand{\Hat}[1]{\widehat{#1}}
+\newcommand{\Ga}[0]{\Gamma}
+\newcommand{\ga}[0]{\gamma}
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+\renewcommand{\Tilde}[1]{\widetilde{#1}}
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{exmp}[thm]{Example}
+
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{claim}{Claim}
+\newtheorem*{note}{Note}
+\newtheorem*{sol}{Solution}
+\newtheorem*{case}{Case}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Variational Autoencoder}
+\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+\parindent=0pt 
+\begin{document}
+\onehalfspace
+
+\sloppy
+\maketitle
+Assume data $X = (x_i)_{i=1}^N$ are i.i.d. with an unknown distribution.
+Assume the latent variable $z$ has prior distribution $z \sim p_\theta(z)$ and the likelihood $p_\theta(x | z)$ is parametrized by learnable parameter $\theta$.\\
+The central problem is to determine the posterior $p_\theta(z | x)$.\\
+{\bf Variational Autoencoder} uses a parametrized family $q_\phi(z | x)$ to approximate $p_\theta(z | x)$.\\
+We derive a proper objective function. We claim that for $x_i \in X$
+\ali{\log p_\theta(x_i) = \KL{q_\phi(z | x_i)}{p_\theta(z | x_i)} + \BE_{z \sim q_\phi(z | x_i)} \left[  \log \frac{p_\theta(x_i, z)}{q_\phi(z | x_i)}\right] \ \ \ (1)}
+This is because 
+\ali{\KL{q_\phi(z | x_i)}{p_\theta(z | x_i)} = \BE_{z \sim q_\phi(z | x_i)} \left[ \log \frac{q_\phi(z | x_i)}{p_\theta(z | x_i)}\right].}
+Hence RHS of $(1)$ is 
+\ali{\BE_{z \sim q_\phi(z | x_i)} \left[ \log \frac{p_\theta(x_i, z)}{p_\theta(z | x_i)}\right] = 
+     \BE_{z \sim q_\phi(z | x_i)} \left[ \log p_\theta(x_i) \right] = \log p_\theta(x_i).}
+We denote 
+\ali{L(\theta, \phi, x_i) := \BE_{z \sim q_\phi(z | x_i)} \left[  \log \frac{p_\theta(x_i, z)}{q_\phi(z | x_i)}\right]}
+and it is the {\bf evidence lower bound} (ELBO).\\
+Because of $(1)$, maximizing $L(\theta, \phi, x_i)$ with respect to $\theta$ and $\phi$ will maximize $p_\theta(x_i)$ and minimize the KL divergence between the approximated and true posteriors.\\
+We next derive another form of ELBO that may be more suitable for practical computation.\\
+Note that the ELBO
+\ali{L(\theta, \phi, x_i) &= \BE_{z \sim q_\phi(z | x_i)} \left[ \log p_\theta(x_i, z) - \log q_\phi(z | x_i) \right] \ \ \ (*)\\
+                          &= \BE_{z \sim q_\phi(z | x_i)} \left[ \log p_\theta(z) - \log q_\phi(z | x_i) + \log p_\theta(x_i, z) - \log p_\theta(z) \right] \\
+                          &= -\KL{q_\phi(z | x_i)}{p_\theta(z)} + \BE_{z \sim q_\phi(z | x_i)} \left[ \log p_\theta(x_i | z) \right]. \ \ \ (**)}
+The way to compute the expectation is to use the Monte Carlo method:
+\ali{\BE_{z \sim p(z)} \left[ f(z) \right] \approx \frac{1}{L} \sum_{l = 1}^L f(z_l),}
+where $z_l$ are sampled from $z_l \sim p(z)$.\\
+To compute the derivative of $L$ w.r.t $\theta$, due to the Dominante Convergence Theorem, we can interchange the derivative and expectation and still use Monte Carlo:
+\ali{\frac{\partial}{\partial \theta} L(\theta, \phi, x_i) = \BE_{z \sim q_\phi(z | x_i)} \left[ \frac{\partial}{\partial \theta} \log p_\theta(x_i, z) \right]}
+The derivative of $L$ w.r.t $\phi$ is problematic, because $\phi$ appears in the distribution of the expectation. We may still switch the integral and derivative, but we may not be able to write the integral of the derivative as an expectation, and therefore, may not be able to use the Monte Carlo method.\\
+A solution is to use {\bf reparametrization}: Reparametrize $z \sim q_\phi(z | x)$ by $z = g_\phi(\e, x)$ with $\e \sim p(\e)$ for some function $g_\phi$ and distribution $p(\e)$. In this way $\phi$ is pulled out of the randomness. We have
+\ali{\BE_{z \sim q_\phi(z | x)} \left[ f(z) \right] = \BE_{\e \sim p(\e)} \left[ f(g_\phi(\e, x)) \right]}
+and the derivative w.r.t $\phi$ goes through the expectation.\\
+Here are two examples for choices of reparametrization. One example is to assume $q_\phi(z|x)$ has tractable inverse CDF. Let $F_\phi(\e, x)$ be the (generalized) inverse of the CDF of $q_\phi(z|x)$. Then $F_\phi(\e, x)$ for $\e$ uniform on $[0, 1]$ has the same distribution as $q_\phi(z | x)$. Another example is $z \sim q_\phi(z | x)$ and we reparametrize by $z = \mu_\phi(x) + \sigma_\phi(x) \e$ for $\e$ being standard Gaussian.\\
+Using reparametrization and Monte Carlo, two estimators of the ELBO $L$ are offered. Estimator A, $L^A$, is based on $(*)$.
+\ali{L^A(\theta, \phi, x_i) = -\frac{1}{L} \sum_{l=1}^L \log q_\phi(z_{i, l} | x_i) + \frac{1}{L} \sum_{l=1}^L \log p_\theta(x_i, z_{i, l}),}
+where $z_{i, l} = g_\phi(\e_{i, l}, x_i)$ (reparametrization) and $\e_{i, l}$ are sampled from $p(\e)$.\\
+In case the KL divergence in $(**)$ can be computed analytically, 
+\ali{L^B(\theta, \phi, x_i) = -\KL{q_\phi(z | x_i)}{p_\theta(z)} + \frac{1}{L} \sum_{l=1}^L \log p_\theta(x_i | z_{i,l}),}
+where $z_{i,l} = g_\phi(\e_{i,l}, x_i)$ and $\e_{i, l} \sim p(\e)$ as above.\\
+We give a concrete example. The MNIST dataset contains pictures of hand-written numbers from $0$ to $9$. Each picture is black and white and has $28 \times 28$ pixels. We let a picture be denoted as $x \in [0, 1]^N$ where $N = 28 \times 28$.\\
+We let the latent variable $z \in \R^N$ and the prior be $z \sim \CN(0, I)$. The likelihood is Bernoulli:
+\ali{\log p_\theta(x | z) = \sum_{i=1}^N x_i \log f_\theta(z)_i + (1 - x_i) \log (1 - f_\theta(z)_i),}
+where $f_\theta(z) \in (0, 1)^N$ is represented by a neural network.\\
+We let $q_\phi(z | x) = \CN(z; \mu_\phi, (\sigma_\phi)^2 I)$ and reparametrize naturally by 
+\ali{z = \mu_\phi + \sigma_\phi \odot \e,}
+where $\odot$ is element-wise product and $\e \sim \CN(0, I)$. The mean and standard deviation, $\mu_\phi = \mu_\phi(x)$ and $\sigma_\phi = \sigma_\phi(x)$, are represented by neural networks. We note that the KL divergence in this example, $\KL{\CN(z; \mu_\phi, (\sigma_\phi)^2 I)}{\CN(0, I)}$, is the KL divergence of two Gaussian distributions, and can be computed analytically:
+\ali{\KL{\CN(\mu_\phi, (\sigma_\phi)^2 I)}{\CN(0, I)} &= - \frac{1}{2} \sum_{i=1}^N \left(1 + \log \sigma_i^2 - \mu_i^2 - \sigma_i^2 \right) \\
+                                                         &:= K(\mu_\phi, \sigma_\phi),}
+where $\mu_\phi = (\mu_i)_i \in \R^N$ and $\sigma_\phi = (\sigma_i)_i \in \R^N$.\\
+We therefore use type B estimator for the ELBO:
+\ali{L(\theta, \phi, x) = -K(\mu_\phi, \sigma_\phi) + \frac{1}{L} \sum_{l=1}^L \log p_\theta(x \ | \ \mu_\phi + \sigma_\phi \odot \e_l)}
+and $\e_l$ are sampled from $\e_l \sim \CN(0, I)$.
+\end{document}

@@ -1,0 +1,199 @@
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+\documentclass[12pt,oneside]{article}
+ % use larger type; default would be 10pt
+
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry}
+
+ % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+%\geometry{margins=2in} % for example, change the margins to 2 inches all round
+%\geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+%\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+%\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+
+
+
+%%% SECTION TITLE APPEARANCE
+
+ % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+%\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+%\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\usepackage[encapsulated]{CJK} 
+
+
+\usepackage{setspace}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amscd}
+\usepackage{hyperref}
+\usepackage{amsthm}
+
+\newcommand{\e}[0]{\varepsilon}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\ra}[0]{\rightarrow}
+\newcommand{\Ra}[0]{\Rightarrow}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\D}[0]{\mathbb{D}}
+\newcommand{\BF}[0]{\mathbb{F}}
+\newcommand{\CN}[0]{\mathcal{N}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\CE}[0]{\mathcal{E}}
+\newcommand{\CM}[0]{\mathcal{M}}
+\newcommand{\CA}[0]{\mathcal{A}}
+\newcommand{\CP}[0]{\mathcal{P}}
+\newcommand{\CT}[0]{\mathcal{T}}
+\newcommand{\cond}[4]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \end{array} \right.}
+\newcommand{\condd}[6]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6}\end{array} \right.}
+\newcommand{\conddd}[8]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6} \\ #7 & \mbox{#8} \end{array} \right.}
+\newcommand{\lams}[1]{\lambda^*(#1)}
+\newcommand{\bs}[0]{\backslash}
+\newcommand{\bM}[0]{\overline{\M}}
+\newcommand{\bmu}[0]{\overline{\mu}}
+\newcommand{\mus}[0]{\mu^*}
+\newcommand{\sa}[0]{\sigma \mbox{-algebra}}
+\newcommand{\set}[1]{\{ #1\}}
+\newcommand{\CB}[0]{\mathcal{B}}
+\newcommand{\CG}[0]{\mathcal{G}}
+\newcommand{\CF}[0]{\mathcal{F}}
+\newcommand{\CU}[0]{\mathcal{U}}
+\newcommand{\CL}[0]{\mathcal{L}}
+\newcommand{\FA}[0]{\mathfrak{A}}
+\newcommand{\BT}[0]{\mathbb{T}}
+\newcommand{\BI}[0]{\mathbb{I}}
+\newcommand{\BE}[0]{\mathbb{E}}
+\newcommand{\eK}[1]{\e\mbox{-Kronecker}(#1)}
+\newcommand{\eKG}[0]{\e\mbox{-Kronecker}}
+\newcommand{\KL}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont KL}}(#1 \ || \ #2)}
+\newcommand{\JS}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont JS}}(#1 \ || \ #2)}
+
+\newcommand{\IN}[1]{I_0(#1)}
+\newcommand{\ING}[0]{I_0}
+\newcommand{\st}[0]{such that }
+\newcommand{\CS}[0]{\mathcal{S}}
+\newcommand{\CC}[0]{\mathcal{C}}
+\newcommand{\tn}[1]{\text{\normalfont #1}}
+
+
+
+\newcommand{\bmp}[1]{\overline{M}^+(#1)}
+\newcommand{\simplep}[2]{S_{#1}^+(#2)}
+\newcommand{\simple}[2]{S_{#1}(#2)}
+\newcommand{\sumf}[2]{\sum_{#1 = #2}^\infty}
+\newcommand{\bigcapf}[2]{\bigcap_{#1 = #2}^\infty}
+\newcommand{\bigcupf}[2]{\bigcup_{#1 = #2}^\infty}
+\newcommand{\limf}[1]{\lim_{#1 \ra \infty}}
+\newcommand{\seq}[2]{\set{#1_{#2}}_{#2=1}^\infty}
+\newcommand{\sg}[1]{\sigma\langle#1\rangle}
+\newcommand{\ag}[1]{\langle#1\rangle}
+\newcommand{\g}[1]{\langle#1\rangle}
+\newcommand{\inte}[0]{\mbox{int}}
+\newcommand{\Cl}[0]{\mbox{cl}}
+\newcommand{\bd}[0]{\mbox{bd}}
+\newcommand{\inv}[1]{{#1}^{-1}}
+\newcommand{\Aut}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Aut}}}
+\newcommand{\Gal}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Gal}}}
+\newcommand{\Bor}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Bor}}}
+\newcommand{\Meas}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Meas}}}
+\newcommand{\ball}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont B}}_{#1}({#2})}
+\newcommand{\supp}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont supp}}}
+\newcommand{\Trig}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Trig}}}
+\newcommand{\sign}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont sign}}}
+\newcommand{\AP}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont AP}}}
+
+\newcommand{\ali}[1]{\begin{align*}#1\end{align*}}
+\newcommand{\zhongwen}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+\renewcommand{\Bar}[1]{\overline{#1}}
+\renewcommand{\Hat}[1]{\widehat{#1}}
+\newcommand{\Ga}[0]{\Gamma}
+\newcommand{\ga}[0]{\gamma}
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+\renewcommand{\Tilde}[1]{\widetilde{#1}}
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{cor}{Corollary}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{exmp}[thm]{Example}
+
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{claim}{Claim}
+\newtheorem*{note}{Note}
+\newtheorem*{sol}{Solution}
+\newtheorem*{case}{Case}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Autoregressive Models: NADE}
+\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+\parindent=0pt 
+\begin{document}
+\onehalfspace
+
+\sloppy
+\maketitle
+Suppose the dataset $D \subset \set{0, 1}^n$ are binary.  Let $x \in D$ and write \\
+ $x = (x_1, x_2,..., x_n)$ for $x_i \in \set{0, 1}$. We can write the likelihood $p(x)$ as
+\ali{p(x) = \prod_{i=2}^n p(x_i | x_{< i}) p(x_1),}
+where $x_{< i} = (x_1,..., x_{i-1})$.\\
+In an autoregressive model we assume the binary $x_i$'s follow Bernoulli distributions. Specifically, $x_1 \sim B(\theta_1)$ and, for $i > 1$,
+\ali{p_{\theta_i}(x_i | x_{< i}) = B(f_{\theta_i}(x_{< i})),}
+where $\theta_i$'s are trainable parameters and $f_{\theta_i}: \set{0, 1}^{i-1} \ra [0, 1]$.\\
+(1) In a {\bf Fully-Visible Sigmoid Belief Network (FVSBN)}, each $f_{\theta_i}$ is just a linear layer:
+\ali{f_{\theta_i}(x_{< i}) = \sigma \left(A_i \begin{pmatrix} x_1 \\ \vdots \\ x_{i-1} \end{pmatrix}\right),}
+where $\sigma$ is the sigmoid function and $A_i \in \R^{1 \times (i-1)}$ contains the parameters. Total parameters $\sim O(n^2)$\\
+(2) To improve the expressiveness of FVSBN, we may use MLP for each $f_{\theta_i}$:  
+\ali{f_{\theta_i}(x_{< i}) &= \sigma(\alpha_i h_i + b_i) \\
+        h_i &= \sigma(A_i x_{< i} + c_i) \in \R^d,}
+where $\alpha_i \in \R^{1 \times d}$, $b_i \in \R$, $A_i \in \R^{d \times i}$ and $c_i \in \R^d$. Total parameters $\sim O(n^2d)$.\\
+(3) {\bf Natural Autoregressive Density Estimator (NADE)} uses a shared weight matrix $W \in \R^{d \times n}$ for all the conditional probabilities:
+\ali{f_{\theta_i}(x_{< i}) &= \sigma(\alpha_i h_i + b_i) \\
+        h_i &= \sigma(W_{\cdot, <i} \cdot x_{< i} + c).}
+Total parameters $\sim O(nd)$.\\
+To learn the model our objective function is the KL divergence:
+\ali{\min_\theta \KL{p_{data}}{p_\theta} &= \min_\theta \BE_{x \sim p_{data}} \left[ \log p_{data}(x) - \log p_\theta(x) \right] \\
+                                        &= \min_\theta \BE_{x \sim p_{data}} \left[ - \log p_\theta(x) \right] \\
+                                        &= \max_\theta \BE_{x \sim p_{data}} \left[ \log p_\theta(x) \right],}
+which is also to max the likelihood.
+\end{document}

@@ -1,0 +1,183 @@
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+\documentclass[12pt,oneside]{article}
+ % use larger type; default would be 10pt
+
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry}
+
+ % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+%\geometry{margins=2in} % for example, change the margins to 2 inches all round
+%\geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+%\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+%\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+
+
+
+%%% SECTION TITLE APPEARANCE
+
+ % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+%\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+%\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\usepackage[encapsulated]{CJK} 
+
+
+\usepackage{setspace}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amscd}
+\usepackage{hyperref}
+\usepackage{amsthm}
+
+\newcommand{\e}[0]{\varepsilon}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\ra}[0]{\rightarrow}
+\newcommand{\Ra}[0]{\Rightarrow}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\D}[0]{\mathbb{D}}
+\newcommand{\BF}[0]{\mathbb{F}}
+\newcommand{\CN}[0]{\mathcal{N}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\CE}[0]{\mathcal{E}}
+\newcommand{\CM}[0]{\mathcal{M}}
+\newcommand{\CA}[0]{\mathcal{A}}
+\newcommand{\CP}[0]{\mathcal{P}}
+\newcommand{\CT}[0]{\mathcal{T}}
+\newcommand{\cond}[4]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \end{array} \right.}
+\newcommand{\condd}[6]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6}\end{array} \right.}
+\newcommand{\conddd}[8]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6} \\ #7 & \mbox{#8} \end{array} \right.}
+\newcommand{\lams}[1]{\lambda^*(#1)}
+\newcommand{\bs}[0]{\backslash}
+\newcommand{\bM}[0]{\overline{\M}}
+\newcommand{\bmu}[0]{\overline{\mu}}
+\newcommand{\mus}[0]{\mu^*}
+\newcommand{\sa}[0]{\sigma \mbox{-algebra}}
+\newcommand{\set}[1]{\{ #1\}}
+\newcommand{\CB}[0]{\mathcal{B}}
+\newcommand{\CG}[0]{\mathcal{G}}
+\newcommand{\CF}[0]{\mathcal{F}}
+\newcommand{\CU}[0]{\mathcal{U}}
+\newcommand{\CL}[0]{\mathcal{L}}
+\newcommand{\FA}[0]{\mathfrak{A}}
+\newcommand{\BT}[0]{\mathbb{T}}
+\newcommand{\BI}[0]{\mathbb{I}}
+\newcommand{\BE}[0]{\mathbb{E}}
+\newcommand{\eK}[1]{\e\mbox{-Kronecker}(#1)}
+\newcommand{\eKG}[0]{\e\mbox{-Kronecker}}
+\newcommand{\KL}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont KL}}(#1 \ || \ #2)}
+\newcommand{\JS}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont JS}}(#1 \ || \ #2)}
+
+\newcommand{\IN}[1]{I_0(#1)}
+\newcommand{\ING}[0]{I_0}
+\newcommand{\st}[0]{such that }
+\newcommand{\CS}[0]{\mathcal{S}}
+\newcommand{\CC}[0]{\mathcal{C}}
+\newcommand{\tn}[1]{\text{\normalfont #1}}
+
+
+
+\newcommand{\bmp}[1]{\overline{M}^+(#1)}
+\newcommand{\simplep}[2]{S_{#1}^+(#2)}
+\newcommand{\simple}[2]{S_{#1}(#2)}
+\newcommand{\sumf}[2]{\sum_{#1 = #2}^\infty}
+\newcommand{\bigcapf}[2]{\bigcap_{#1 = #2}^\infty}
+\newcommand{\bigcupf}[2]{\bigcup_{#1 = #2}^\infty}
+\newcommand{\limf}[1]{\lim_{#1 \ra \infty}}
+\newcommand{\seq}[2]{\set{#1_{#2}}_{#2=1}^\infty}
+\newcommand{\sg}[1]{\sigma\langle#1\rangle}
+\newcommand{\ag}[1]{\langle#1\rangle}
+\newcommand{\g}[1]{\langle#1\rangle}
+\newcommand{\inte}[0]{\mbox{int}}
+\newcommand{\Cl}[0]{\mbox{cl}}
+\newcommand{\bd}[0]{\mbox{bd}}
+\newcommand{\inv}[1]{{#1}^{-1}}
+\newcommand{\Aut}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Aut}}}
+\newcommand{\Gal}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Gal}}}
+\newcommand{\Bor}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Bor}}}
+\newcommand{\Meas}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Meas}}}
+\newcommand{\ball}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont B}}_{#1}({#2})}
+\newcommand{\supp}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont supp}}}
+\newcommand{\Trig}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Trig}}}
+\newcommand{\sign}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont sign}}}
+\newcommand{\AP}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont AP}}}
+
+\newcommand{\ali}[1]{\begin{align*}#1\end{align*}}
+\newcommand{\zhongwen}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+\renewcommand{\Bar}[1]{\overline{#1}}
+\renewcommand{\Hat}[1]{\widehat{#1}}
+\newcommand{\Ga}[0]{\Gamma}
+\newcommand{\ga}[0]{\gamma}
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+\renewcommand{\Tilde}[1]{\widetilde{#1}}
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{cor}{Corollary}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{exmp}[thm]{Example}
+
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{claim}{Claim}
+\newtheorem*{note}{Note}
+\newtheorem*{sol}{Solution}
+\newtheorem*{case}{Case}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Conditional Generative Models}
+\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+\parindent=0pt 
+\begin{document}
+\onehalfspace
+
+\sloppy
+\maketitle
+Generative models, for example GAN or VAE, can learn conditional distributions.\\
+Recall that GAN plays the min-max game:
+\ali{\arg \min_\theta \max_\phi \BE_{x, z} \left[ \ln(1 - D_\phi(G_\theta(z))) + \ln D_\phi(x) \right].}
+In the context of the MNIST dataset, there are labels $Y$ associated with images $X$ and there are two natural ways to form conditional probabilities between $X$ and $Y$: $p(X | Y = y)$ or $p(Y | X = x)$. Note that $p(Y | X = x)$ is the distribution of the labels given $X = x$, which, in the case of MNIST, is deterministic, and is therefore not very interesting. The other case, $p(X | Y = y)$, is the distribution of $X$ (the images) given a label $y$. If this conditional distribution is learned, we can generate hand-written digits according to a specific label.\\
+To learn this conditional distribution, we modify generator $G_\theta(z)$ to include the information of the conditioned label $y$: $G_\theta(y ,z)$. Our discriminator becomes $D_\phi(x, y)$. The min-max game becomes
+\ali{\arg \min_\theta \max_\phi \BE_{x, y, z} \left[ \ln(1 - D_\phi(G_\theta(y, z), y)) + \ln D_\phi(x, y) \right].} 
+The conditional VAE follows similarly by conditioning on the labels $y$. The prior of the latent variable $z$ remains the same $p_\theta(z)$. We update the likelihood to be $p_\theta(x | z, y)$. The posterior is therefore $q_\phi(z | x, y)$. We reparametrize by $z = g_\phi(x, y, \e)$ for $\e \sim p(\e)$.
+\end{document}

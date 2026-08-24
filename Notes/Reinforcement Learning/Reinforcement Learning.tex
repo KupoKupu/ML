@@ -1,0 +1,419 @@
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+\documentclass[12pt,oneside]{article}
+ % use larger type; default would be 10pt
+
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry}
+
+ % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+%\geometry{margins=2in} % for example, change the margins to 2 inches all round
+%\geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+%\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+%\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+
+
+
+%%% SECTION TITLE APPEARANCE
+
+ % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+%\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+%\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\usepackage[encapsulated]{CJK} 
+
+
+\usepackage{setspace}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amscd}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{graphicx} 
+
+\newcommand{\e}[0]{\varepsilon}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\ra}[0]{\rightarrow}
+\newcommand{\Ra}[0]{\Rightarrow}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\D}[0]{\mathbb{D}}
+\newcommand{\BF}[0]{\mathbb{F}}
+\newcommand{\CN}[0]{\mathcal{N}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\CE}[0]{\mathcal{E}}
+\newcommand{\CM}[0]{\mathcal{M}}
+\newcommand{\CA}[0]{\mathcal{A}}
+\newcommand{\CP}[0]{\mathcal{P}}
+\newcommand{\CT}[0]{\mathcal{T}}
+\newcommand{\cond}[4]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \end{array} \right.}
+\newcommand{\condd}[6]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6}\end{array} \right.}
+\newcommand{\conddd}[8]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6} \\ #7 & \mbox{#8} \end{array} \right.}
+\newcommand{\lams}[1]{\lambda^*(#1)}
+\newcommand{\bs}[0]{\backslash}
+\newcommand{\bM}[0]{\overline{\M}}
+\newcommand{\bmu}[0]{\overline{\mu}}
+\newcommand{\mus}[0]{\mu^*}
+\newcommand{\sa}[0]{\sigma \mbox{-algebra}}
+\newcommand{\set}[1]{\{ #1\}}
+\newcommand{\CB}[0]{\mathcal{B}}
+\newcommand{\CG}[0]{\mathcal{G}}
+\newcommand{\CF}[0]{\mathcal{F}}
+\newcommand{\CU}[0]{\mathcal{U}}
+\newcommand{\CL}[0]{\mathcal{L}}
+\newcommand{\FA}[0]{\mathfrak{A}}
+\newcommand{\BT}[0]{\mathbb{T}}
+\newcommand{\BI}[0]{\mathbb{I}}
+\newcommand{\BE}[0]{\mathbb{E}}
+\newcommand{\eK}[1]{\e\mbox{-Kronecker}(#1)}
+\newcommand{\eKG}[0]{\e\mbox{-Kronecker}}
+\newcommand{\KL}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont KL}}(#1 \ || \ #2)}
+\newcommand{\JS}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont JS}}(#1 \ || \ #2)}
+
+\newcommand{\IN}[1]{I_0(#1)}
+\newcommand{\ING}[0]{I_0}
+\newcommand{\st}[0]{such that }
+\newcommand{\CS}[0]{\mathcal{S}}
+\newcommand{\CC}[0]{\mathcal{C}}
+\newcommand{\tn}[1]{\text{\normalfont #1}}
+
+
+
+\newcommand{\bmp}[1]{\overline{M}^+(#1)}
+\newcommand{\simplep}[2]{S_{#1}^+(#2)}
+\newcommand{\simple}[2]{S_{#1}(#2)}
+\newcommand{\sumf}[2]{\sum_{#1 = #2}^\infty}
+\newcommand{\bigcapf}[2]{\bigcap_{#1 = #2}^\infty}
+\newcommand{\bigcupf}[2]{\bigcup_{#1 = #2}^\infty}
+\newcommand{\limf}[1]{\lim_{#1 \ra \infty}}
+\newcommand{\seq}[2]{\set{#1_{#2}}_{#2=1}^\infty}
+\newcommand{\sg}[1]{\sigma\langle#1\rangle}
+\newcommand{\ag}[1]{\langle#1\rangle}
+\newcommand{\g}[1]{\langle#1\rangle}
+\newcommand{\inte}[0]{\mbox{int}}
+\newcommand{\Cl}[0]{\mbox{cl}}
+\newcommand{\bd}[0]{\mbox{bd}}
+\newcommand{\inv}[1]{{#1}^{-1}}
+\newcommand{\Aut}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Aut}}}
+\newcommand{\Gal}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Gal}}}
+\newcommand{\Bor}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Bor}}}
+\newcommand{\Meas}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Meas}}}
+\newcommand{\ball}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont B}}_{#1}({#2})}
+\newcommand{\supp}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont supp}}}
+\newcommand{\Trig}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Trig}}}
+\newcommand{\sign}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont sign}}}
+\newcommand{\AP}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont AP}}}
+
+\newcommand{\ali}[1]{\begin{align*}#1\end{align*}}
+\newcommand{\zhongwen}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+\renewcommand{\Bar}[1]{\overline{#1}}
+\renewcommand{\Hat}[1]{\widehat{#1}}
+\newcommand{\Ga}[0]{\Gamma}
+\newcommand{\ga}[0]{\gamma}
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+\renewcommand{\Tilde}[1]{\widetilde{#1}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Var}{Var}
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{cor}{Corollary}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{exmp}[thm]{Example}
+
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{claim}{Claim}
+\newtheorem*{note}{Note}
+\newtheorem*{sol}{Solution}
+\newtheorem*{case}{Case}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Reinforcement Learning: An Introduction}
+\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+\parindent=0pt 
+\begin{document}
+\onehalfspace
+\sloppy
+\maketitle
+{\bf Markov Decision Process\\}
+
+A {\bf Markov Decision Process (MDP)} is a 4-tuple: $(S, A, P_a, R_a)$:\\
+$S$ is the {\bf state space}. It is the set of all states, which can be either discrete or continuous.\\
+$A$ is the {\bf action space}. It is the set of all actions, which can be either discrete or continuous.\\
+$p_a(s, s')$ for $a \in A$ and $s, s' \in S$ is the probability of action $a$ in state $s$ at time $t$ leading to state $s'$ at time $t+1$.\\
+$r_a(s, s')$ for $a \in A$ and $s, s' \in S$ is the {\bf reward} received by taking action $a$ and transition from state $s$ to $s'$.\\
+A {\bf policy} $\pi$ maps the state space $S$ to the action space $A$, or to $P(A)$ (ie. $\pi(s)$ is a distribution over $A$).\\
+
+Note that the definition of $p_a(s, s')$ assumes the transition probability is time homogenous and has Markov property. The state transition is determined by the {\bf environment}. \\
+
+The {\bf agent} (or player) interacts with the environment in the following loop:\\
+(1) At time $t$, agent is in state $s_t$.\\
+(2) Agent does action $a$ according to policy $\pi$.\\
+(3) Environment updates state $s_{t+1}$ according to $p_a(s_t, s_{t+1})$.\\
+(4) Environment generates a reward $r_a(s_t, s_{t+1})$.\\
+(5) Agent is now in state $s_{t+1}$ and continues the loop from (1).\\
+
+Note that the randomness in this process comes from\\
+(1) stochastic agent's action;\\
+(2) state updates from the environment.\\
+
+While looping from (1) to (5) as above, a {\bf (state, action, reward) trajectory} is formed:
+\ali{ (s_0, a_0, r_0) \ra (s_1, a_1, r_1) \ra ... \ra (s_{T-1}, a_{T-1}, r_{T-1}).}  
+
+A {\bf return} (or cumulative future reward) form time $t$ is defined as 
+\ali{\tilde{U}_t = R_t + R_{t+1} + ... = \sum_{i \geq t} R_i.}
+A {\bf discounted return} with a discount rate $\ga$ from time $t$ is 
+\ali{U_t  = R_t + \ga R_{t+1} + ... = \sum_{i \geq t} \ga^{i-t} R_i.}
+
+Note that $U_t$ is a random variable. Its randomness comes from state transition and actions. In other words, $U_t$ depends on the random variables $S_t, S_{t+1},...$ and $A_t, A_{t+1},...$.\\
+
+Given a policy $\pi$, the {\bf action-value function} is defined as
+ \ali{Q_\pi(s_t, a_t) := \BE \left[ U_t | S_t = s_t, A_t = a_t \right],}
+where the expectation is over all $A_{i}$ and $S_i$ for $i > t$.\\
+The {\bf optimal action-value function} is 
+\ali{Q^*(s_t, a_t) := \max_\pi  Q_\pi(s_t, a_t).}
+The {\bf state-value function} is defined as 
+\ali{V_\pi(s_t) := \BE_{A \sim \pi(\cdot| s_t)} \left[ Q_\pi(s_t, A) \right].}
+For a policy $\pi$, $Q_\pi(s,a)$ indicates how good an agent picks an action $a$ in state $s$. $V_\pi(s)$ indicates how good the state $s$ is. $\BE_S \left[ V_\pi(S) \right]$ indicates how good a policy $\pi$ is.\\
+
+{\bf Value-Based Learning\\}
+
+The optimal action-value function $Q^*$ can guide agent's action by 
+\ali{a_t = \argmax_a Q^*(s_t, a)}
+at state $s_t$. Value-based learning is to learn the optimal action-value function $Q^*$.\\
+Let $Q(s, a; \theta)$ be a neural network (with parameters $\theta$) approximating the optimal action-value function $Q^*$. To train $Q(s, a; \theta)$, we use {\bf Q-Learning}, which is a type of {\bf Temporal Difference Learning} (TD Learning).\\
+Recall that $U_t = \sum_{i \geq t} \ga^{i-t} R_i$. Note 
+\ali{U_t &= R_t + \ga R_{t+1} + \ga^2 R_{t+2} + ... \\
+         &= R_t + \ga (R_{t+1} + \ga R_{t+2} + ...) \\
+         &= R_t + \ga U_{t+1}.}
+Hence, at time $t$,
+\ali{Q(s_t, a_t; \theta) \approx r_t + \ga \max_a Q(s_{t+1}, a; \theta),}
+where $r_t$ is the reward by taking action $a_t$ and transition from $s_t$ to $s_{t+1}$. We let the TD target 
+\ali{y_t(\theta) := r_t + \ga \max_a Q(s_{t+1}, a; \theta).}
+The loss function is 
+\ali{L_t(\theta) := \frac{1}{2} (Q(s_t, a_t; \theta) - y_t(\theta))^2.}
+The Q-learning algorithm (for one step) therefore is:\\
+(1) Observe state $s_t$ and take action $a_t$;\\
+(2) Compute $q_t := Q(s_t, a_t; \theta_t)$ and differentiate 
+\ali{d_t = \frac{\partial Q(s_t, a_t; \theta)}{\partial \theta}(\theta_t);}
+(3) Environment gives the next state $s_{t+1}$ and reward $r_t$;\\
+(4) Compute TD target $y_t = r_t + \ga \max_a Q(s_{t+1}, a; \theta_t)$;\\
+(5) Gradient descent on $\theta$: 
+\ali{\theta_{t+1} = \theta_t - \alpha (q_t - y_t) d_t,}
+where $\alpha$ is the learning rate.\\
+
+{\bf Policy-Based Learning\\}
+
+In policy-based learning, we learn a neural network $\pi(a | s; \theta)$ approximating the policy $\pi$. For a trajectory
+\ali{\tau: (s_0, a_0, r_0) \ra (s_1, a_1, r_1) \ra ... \ra (s_{T-1}, a_{T-1}, r_{T-1})}
+we let $R(\tau) := \sum_{t=0}^{T-1} \ga^t r_t$ be its discounted total return. Let $p(\tau | \theta)$ be the probability of observing $\tau$ under the policy $\pi(a | s; \theta)$. Note that $p(\tau|\theta)$ also depends on the state-transition probability $p_a(s, s')$, which is completely determined by the environment.\\
+The objective is to maximize the expected return:
+\ali{ J(\theta) := \BE_{\tau \sim p(\tau|\theta)} \left[ R(\tau) \right] = \int R(\tau) p(\tau | \theta) \ d\tau.}
+To get the derivative of $J(\theta)$, we have
+\ali{ \nabla_\theta J(\theta) = \nabla_\theta \int R(\tau) p(\tau | \theta) \ d\tau = \int R(\tau) \nabla_\theta p(\tau | \theta) \ d\tau.}
+Notice that 
+\ali{p(\tau | \theta) = p(s_0) \left(\prod_{t=0}^{T-2} \pi(a_t | s_t; \theta) p_{a_t}(s_t, s_{t+1})\right) \pi(a_{T-1} | s_{T-1}; \theta).}  
+In this product the probabilities $p(s_0)$ and $p_{a_t}(s_t, s_{t+1})$ are determined by the environment and intractable. One way to bypass this issue is to take logarithm:
+\ali{\nabla_\theta p(\tau|\theta) = p(\tau | \theta) \nabla_\theta \log p(\tau | \theta)}
+and
+\ali{\nabla_\theta \log p(\tau | \theta) &= \nabla_\theta \log p(s_0) + \nabla_\theta \sum_{t=0}^{T-2} \log p_{a_t}(s_t, s_{t+1}) + \nabla_\theta \sum_{t=0}^{T-1} \log \pi(a_t|s_t;\theta) \\
+                                         &= \sum_{t=0}^{T-1} \nabla_\theta \log \pi(a_t|s_t;\theta).}
+Hence,
+\ali{\nabla_\theta J(\theta) &= \int \left(\sum_{t=0}^{T-1} \nabla_\theta \log \pi(a_t|s_t;\theta)\right) R(\tau) p(\tau|\theta) \ d\tau \\
+                            &= \BE_{\tau \sim p(\tau|\theta)} \left[\left(\sum_{t=0}^{T-1} \nabla_\theta \log \pi(a_t|s_t;\theta)\right) R(\tau)\right].}
+This shows, if we define (the {\bf Reinforce Estimator})
+\ali{\hat{g}(\tau) := \left(\sum_{t=0}^{T-1} \nabla_\theta \log \pi(a_t|s_t;\theta)\right) R(\tau),}
+then it is an unbiased estimator of the gradient of expected return:
+\ali{ \BE_{\tau \sim p(\tau|\theta)} \left[ \hat{g}(\tau) \right] = \nabla_\theta J(\theta).}
+Hence, the Reinforce algorithm (for one step) is:\\
+(1) Observe a trajectory according to policy $\pi(a|s;\theta)$:
+\ali{\tau: (s_0, a_0, r_0) \ra (s_1, a_1, r_1) \ra ... \ra (s_{T-1}, a_{T-1}, r_{T-1});}
+(2) Compute $\hat{g}(\tau)$;\\
+(3) Gradient ascent on $\theta$: $\theta = \theta + \alpha \hat{g}(\tau)$, where $\alpha$ is the learning rate.\\
+
+One problem with the Reinforce Estimator is its high variance. We show an upper bound of its variance under some regulatory assumptions. We restrict the scope by let the trajectories all have length $T$ and denote this restricted probability by $p(\tau | \theta; T)$. Assume the rewards are bounded: $r_t \leq r$ for all $0 \leq t \leq T-1$. Also assume 
+\ali{\BE_{s_t, a_t} \left[ \norm{\nabla_\theta \log \pi(a_t|s_t;\theta)}^2 \right] \leq C}
+for all $t$ and for some bound $C$.
+
+\begin{prop}
+Under the assumptions above, the total variance 
+\ali{\Var(\hat{g}) := \BE_{\tau \sim p(\tau | \theta; T)} \left[ \norm{\hat{g}(\tau) - \BE_{\tau \sim p(\tau | \theta; T)} \left[\hat{g}(\tau) \right]}^2 \right]}
+satisfies
+\ali{\Var(\hat{g}) \leq T^3r^2C.}
+\end{prop}
+\begin{proof}
+For length $T$ trajectories $(s_t, a_t, r_t)_{0 \leq t \leq T-1}$, we denote 
+\ali{X(a_t, s_t) := \nabla_\theta \log \pi(a_t|s_t;\theta).}
+Then
+\ali{\Var(\hat{g}) &= \BE_{\tau \sim p(\tau | \theta; T)} \left[ \norm{\hat{g}(\tau)}^2 \right] - \norm{\BE_{\tau \sim p(\tau | \theta; T)} \left[ \hat{g}(\tau) \right]}^2 \\
+                   &\leq \BE_{\tau \sim p(\tau | \theta; T)} \left[ \norm{\hat{g}(\tau)}^2 \right] \\
+                   &= \BE_{\tau \sim p(\tau | \theta; T)} \left[ R(\tau)^2 \norm{\sum_{t=0}^{T-1} X(a_t, s_t)}^2  \right]. \ \ \ (1)}
+We first note
+\ali{\BE_{a_t \sim \pi(\cdot|s_t;\theta)} \left[ X(a_t, s_t) | s_t \right] &= \int (\nabla_\theta \log \pi(a_t|s_t;\theta)) \pi(a_t|s_t;\theta) \ d a_t\\
+             &= \int \nabla_\theta \pi(a_t|s_t;\theta) \ d a_t\\
+             &= \nabla_\theta \int \pi(a_t|s_t;\theta) \ d a_t \\
+             &= \nabla_\theta 1 = 0. }
+Let $t < k$ and, by the law of total expectation,
+\ali{\BE \left[X(a_t, s_t)^\top X(a_k, s_k)\right] = \BE \left[ \BE \left[ X(a_t, s_t)^\top X(a_k, s_k) | s_t,a_t,s_k \right] \right].}
+Conditioning on $s_t$ and $a_t$ completely determines $X(a_t, s_t)$, and therefore 
+\ali{&\BE \left[ \BE \left[ X(a_t, s_t)^\top X(a_k, s_k) | s_t,a_t,s_k \right] \right] \\
+= \  &\BE \left[  X(a_t, s_t)^\top \BE \left[ X(a_k, s_k) | s_t,a_t,s_k \right] \right] \\
+= \ &\BE \left[  X(a_t, s_t)^\top \BE \left[ X(a_k, s_k) | s_k \right] \right] \\
+= \ &\BE \left[  X(a_t, s_t)^\top 0 \right] = 0.}
+Hence, the bound in (1) is
+\ali{&\BE_{\tau \sim p(\tau | \theta; T)} \left[ R(\tau)^2 \norm{\sum_{t=0}^{T-1} X(a_t, s_t)}^2  \right] \\
+= \ &R(\tau)^2 \sum_{t=0}^{T-1} \BE_{\tau \sim p(\tau | \theta; T)} \left[ \norm{X(a_t, s_t)}^2  \right] \\
+\leq \ &(Tr)^2(TC) = T^3r^2C}
+by the assumptions.
+
+\end{proof}
+Empirical variance scaling shows the bound $O(T^3)$ is accurate. In other words, $\Var(\hat{g})$ is $\Theta(T^3)$.\\
+
+{\bf Actor-Critic Method\\} 
+
+The actor-critic method learns both the policy and the value function through two neural networks. Let $\pi(a|s;\theta)$ be a neural network {\bf (actor)} approximating the policy. Let $Q(s,a;w)$ be a neural network {\bf (critic)} approximating the action-value function.\\
+The objective for the value network is the (squared) TD difference:
+\ali{\delta_t := Q(s_t,a_t;w) - (r_t + \ga Q(s_{t+1},a_{t+1},w)).}
+The policy network (actor) $\pi(a|s;\theta)$ is used to get $a_t$ (based on $s_t$) and $a_{t+1}$ (based on $s_{t+1}$).\\
+The objective for the policy network is the expected return (written in a slightly different way):
+\ali{ J(\theta) = \BE \left[ Q_{\pi(a|s;\theta)}(s, a) \right].}
+In policy-based learning, we derived the reinforce estimator for the derivative of expected return w.r.t the parameters using trajectories. A similar result is that
+\ali{(\nabla_\theta \log \pi(a|s;\theta)) Q_{\pi(a|s;\theta)}(s, a)}
+is also an unbiased estimator of $\nabla_\theta J(\theta)$ in the sense that
+\ali{ \nabla_\theta J(\theta) = \BE \left[(\nabla_\theta \log \pi(a|s;\theta)) Q_{\pi(a|s;\theta)}(s, a)\right],}
+where the expectation is on states $s$ and actions $a \sim \pi(a|s;\theta)$. \\
+The value network (critic) $Q(s,a;w)$ is used to approximate $Q_{\pi(a|s;\theta)}(s, a)$.\\
+
+The algorithm (for one step) is:\\
+(1) At time $t$ and state $s_t$, sample $a_t$ based on $\pi(a_t|s_t;\theta_t)$;\\
+(2) Perform $a_t$ to get $s_{t+1}$ and reward $r_t$;\\
+(3) Sample $a_{t+1}$ based on $s_{t+1}$ and $\pi(a_t|s_t;\theta_t)$;\\
+(4) Policy update: 
+\ali{\theta_{t+1} = \theta_t + \alpha_\theta  (\nabla_\theta \log \pi(a_t|s_t;\theta_t)) Q(s_t, a_t; w_t);}
+(5) Compute the TD difference
+\ali{\delta_t = Q(s_t,a_t;w_t) - (r_t + \ga Q(s_{t+1},a_{t+1};w_t))}
+and update the value network:
+\ali{w_{t+1} = w_t - \alpha_w \delta_t \nabla_w Q(s_t,a_t;w_t).}
+
+{\bf Actor-Critic Method with Baseline\\}
+
+The vanilla actor-critic method still suffers high variance during policy training because of the gradient estimator
+\ali{   (\nabla_\theta \log \pi(a|s;\theta)) Q_{\pi(a|s;\theta)}(s, a).}
+One way to reduce the variance is to subtract a baseline $b(s)$ from $Q_{\pi(a|s;\theta)}(s, a)$. Note that the baseline $b(s)$ only depends on $s$, so that after subtraction it is still unbiased:
+\ali{ &\BE \left[(\nabla_\theta \log \pi(a|s;\theta)) b(s) \right] \\
+= \ &\BE_s \left[b(s) \BE_{a \sim \pi(\cdot|a;\theta)}  \left[(\nabla_\theta \log \pi(a|s;\theta))  \right] \right] \\
+= \ &\BE_s \left[b(s) \BE_{a \sim \pi(\cdot|a;\theta)}  \left[\frac{\nabla_\theta \pi(a|s;\theta)}{ \pi(a|s;\theta)} \right] \right] \\
+= \ &\BE_s \left[b(s) \sum_a \left[\frac{\nabla_\theta \pi(a|s;\theta)}{ \pi(a|s;\theta)} \right] \pi(a|s;\theta) \right] \\
+= \ &\BE_s \left[b(s) \nabla_\theta \left(\sum_a \pi(a|s;\theta)\right) \right] \\
+= \ &\BE_s \left[ b(s) \nabla_\theta (1) \right] = 0}
+We then decide a proper baseline. After subtracting the baseline
+\ali{\hat{g}(s,a) := (\nabla_\theta \log \pi(a|s;\theta)) (Q_{\pi(a|s;\theta)}(s, a) - b(s)),}
+the total variance is 
+\ali{\Var(\hat{g}(s,a)) = \BE \left[ \norm{\hat{g}(s,a)}^2 \right] - \norm{\BE \left[ \hat{g}(s,a) \right]}^2.}
+Since $\hat{g}$ is still unbiased, 
+\ali{\BE \left[ \hat{g}(s,a) \right] = \nabla_\theta J(\theta)}
+and therefore we focus on $\BE \left[ \norm{\hat{g}(s,a)}^2 \right] $.
+\ali{\BE \left[ \norm{\hat{g}(s,a)}^2 \right] &= \BE \left[ \norm{\nabla_\theta \log \pi(a|s;\theta)}^2 (Q_{\pi(a|s;\theta)}(s, a) - b(s))^2 \right] \\
+ &= \BE_s \left[\BE_{a \sim \pi(\cdot|s;\theta)} \left[ \norm{\nabla_\theta \log \pi(a|s;\theta)}^2 (Q_{\pi(a|s;\theta)}(s, a) - b(s))^2 \right] \right] \\
+ &= \BE_s \left[\sum_a \norm{\nabla_\theta \log \pi(a|s;\theta)}^2 (Q_{\pi(a|s;\theta)}(s, a) - b(s))^2 \pi(a|s;\theta) \right].}
+Note, for any fixed state $s$, 
+\ali{\sum_a \norm{\nabla_\theta \log \pi(a|s;\theta)}^2 (Q_{\pi(a|s;\theta)}(s, a) - b(s))^2 \pi(a|s;\theta)}
+has a minimizer 
+\ali{b^*(s) &= \frac{\sum_a \norm{\nabla_\theta \log \pi(a|s;\theta)}^2 Q_{\pi(a|s;\theta)}(s, a)\pi(a|s;\theta)}{\sum_a \norm{\nabla_\theta \log \pi(a|s;\theta)}^2 \pi(a|s;\theta)} \\
+            &= \frac{\BE_{a \sim \pi(\cdot|s;\theta)} \left[ \norm{\nabla_\theta \log \pi(a|s;\theta)}^2 Q_{\pi(a|s;\theta)}(s, a) \right]}{\BE_{a \sim \pi(\cdot|s;\theta)} \left[ \norm{\nabla_\theta \log \pi(a|s;\theta)}^2 \right]},}
+but, for simplicity, we use 
+\ali{b(s) &= \BE_{a \sim \pi(\cdot|s;\theta)} \left[ Q_{\pi(a|s;\theta)}(s, a) \right] \\
+          &= V_{\pi(\cdot|s;\theta)}(s).}
+Rather than approximating the action-value function as in the vanilla method, we approximate state-value function $V_\pi(s)$ using a neural network $V(s;w)$. The objective for the state-value network is still the (squared) TD difference:
+\ali{\delta_t = r_t + \ga V(s_{t+1};w) - V(s_t;w).}
+The estimator of the gradient $\nabla_\theta J(\theta)$ is 
+\ali{&(\nabla_\theta \log \pi(a|s;\theta)) (Q_{\pi(a|s;\theta)}(s, a) - V_{\pi(a|s;\theta)}(s)) \\
+    := &(\nabla_\theta \log \pi(a|s;\theta)) A_{\pi(a|s;\theta)}(s, a),}
+where 
+\ali{A_{\pi(a|s;\theta)}(s, a) := Q_{\pi(a|s;\theta)}(s, a) - V_{\pi(a|s;\theta)}(s)}
+is the {\bf advantage function}.\\
+One remaining problem: how to compute $A_{\pi_\theta}(s_t,a_t)$ at time $t$? We use an estimator:
+\ali{ \hat{\delta}_t :=  r_t + \ga V_{\pi_\theta}(s_{t+1}) - V_{\pi_\theta}(s_t).}
+We have
+\ali{ \BE \left[\hat{\delta}_t | s_t, a_t \right] &= \BE \left[ r_t + \ga V_{\pi_\theta}(s_{t+1}) | s_t, a_t \right] - V_{\pi_\theta}(s_t) \\
+&= Q_{\pi_\theta}(s_t, a_t) - V_{\pi_\theta}(s_t) \\
+&= A_{\pi_\theta}(s_t, a_t).}
+Hence, if $V(s;w) \approx V_{\pi_\theta}(s)$, then $\delta_t \approx \hat{\delta}_t$ and we use the estimator
+\ali{(\nabla_\theta \log \pi(a_t|s_t;\theta)) \delta_t}
+for the gradient $\nabla_\theta J(\theta)$.\\
+
+Therefore, the algorithm (for one step) is:\\
+(1) At time $t$ and state $s_t$, sample $a_t$ based on $\pi(a_t|s_t;\theta_t)$;\\
+(2) Perform $a_t$ to get $s_{t+1}$ and reward $r_t$;\\
+(3) Sample $a_{t+1}$ based on $s_{t+1}$ and $\pi(a_t|s_t;\theta_t)$;\\
+(4) Compute the TD difference
+\ali{\delta_t = r_t + \ga V(s_{t+1};w_t) - V(s_t;w_t)}
+and update the state value network:
+\ali{w_{t+1} = w_t + \alpha_w \delta_t \nabla_w V(s_t;w_t);}
+(5) Policy update: 
+\ali{\theta_{t+1} = \theta_t + \alpha_\theta  (\nabla_\theta \log \pi(a_t|s_t;\theta_t)) \delta_t.}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+\end{document}

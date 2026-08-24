@@ -1,0 +1,278 @@
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+\documentclass[12pt,oneside]{article}
+ % use larger type; default would be 10pt
+
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry}
+
+ % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+%\geometry{margins=2in} % for example, change the margins to 2 inches all round
+%\geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+%\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+%\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+
+
+
+%%% SECTION TITLE APPEARANCE
+
+ % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+%\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+%\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\usepackage[encapsulated]{CJK} 
+
+
+\usepackage{setspace}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amscd}
+\usepackage{hyperref}
+\usepackage{amsthm}
+
+\newcommand{\e}[0]{\varepsilon}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\ra}[0]{\rightarrow}
+\newcommand{\Ra}[0]{\Rightarrow}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\D}[0]{\mathbb{D}}
+\newcommand{\BF}[0]{\mathbb{F}}
+\newcommand{\CN}[0]{\mathcal{N}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\CE}[0]{\mathcal{E}}
+\newcommand{\CM}[0]{\mathcal{M}}
+\newcommand{\CA}[0]{\mathcal{A}}
+\newcommand{\CP}[0]{\mathcal{P}}
+\newcommand{\CT}[0]{\mathcal{T}}
+\newcommand{\cond}[4]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \end{array} \right.}
+\newcommand{\condd}[6]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6}\end{array} \right.}
+\newcommand{\conddd}[8]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6} \\ #7 & \mbox{#8} \end{array} \right.}
+\newcommand{\lams}[1]{\lambda^*(#1)}
+\newcommand{\bs}[0]{\backslash}
+\newcommand{\bM}[0]{\overline{\M}}
+\newcommand{\bmu}[0]{\overline{\mu}}
+\newcommand{\mus}[0]{\mu^*}
+\newcommand{\sa}[0]{\sigma \mbox{-algebra}}
+\newcommand{\set}[1]{\{ #1\}}
+\newcommand{\CB}[0]{\mathcal{B}}
+\newcommand{\CG}[0]{\mathcal{G}}
+\newcommand{\CF}[0]{\mathcal{F}}
+\newcommand{\CU}[0]{\mathcal{U}}
+\newcommand{\CL}[0]{\mathcal{L}}
+\newcommand{\FA}[0]{\mathfrak{A}}
+\newcommand{\BT}[0]{\mathbb{T}}
+\newcommand{\BI}[0]{\mathbb{I}}
+\newcommand{\BE}[0]{\mathbb{E}}
+\newcommand{\eK}[1]{\e\mbox{-Kronecker}(#1)}
+\newcommand{\eKG}[0]{\e\mbox{-Kronecker}}
+\newcommand{\KL}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont KL}}(#1 \ || \ #2)}
+\newcommand{\JS}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont JS}}(#1 \ || \ #2)}
+
+\newcommand{\IN}[1]{I_0(#1)}
+\newcommand{\ING}[0]{I_0}
+\newcommand{\st}[0]{such that }
+\newcommand{\CS}[0]{\mathcal{S}}
+\newcommand{\CC}[0]{\mathcal{C}}
+\newcommand{\tn}[1]{\text{\normalfont #1}}
+
+
+
+\newcommand{\bmp}[1]{\overline{M}^+(#1)}
+\newcommand{\simplep}[2]{S_{#1}^+(#2)}
+\newcommand{\simple}[2]{S_{#1}(#2)}
+\newcommand{\sumf}[2]{\sum_{#1 = #2}^\infty}
+\newcommand{\bigcapf}[2]{\bigcap_{#1 = #2}^\infty}
+\newcommand{\bigcupf}[2]{\bigcup_{#1 = #2}^\infty}
+\newcommand{\limf}[1]{\lim_{#1 \ra \infty}}
+\newcommand{\seq}[2]{\set{#1_{#2}}_{#2=1}^\infty}
+\newcommand{\sg}[1]{\sigma\langle#1\rangle}
+\newcommand{\ag}[1]{\langle#1\rangle}
+\newcommand{\g}[1]{\langle#1\rangle}
+\newcommand{\inte}[0]{\mbox{int}}
+\newcommand{\Cl}[0]{\mbox{cl}}
+\newcommand{\bd}[0]{\mbox{bd}}
+\newcommand{\inv}[1]{{#1}^{-1}}
+\newcommand{\Aut}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Aut}}}
+\newcommand{\Gal}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Gal}}}
+\newcommand{\Bor}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Bor}}}
+\newcommand{\Meas}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Meas}}}
+\newcommand{\ball}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont B}}_{#1}({#2})}
+\newcommand{\supp}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont supp}}}
+\newcommand{\Trig}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Trig}}}
+\newcommand{\sign}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont sign}}}
+\newcommand{\AP}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont AP}}}
+
+\newcommand{\ali}[1]{\begin{align*}#1\end{align*}}
+\newcommand{\zhongwen}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+\renewcommand{\Bar}[1]{\overline{#1}}
+\renewcommand{\Hat}[1]{\widehat{#1}}
+\newcommand{\Ga}[0]{\Gamma}
+\newcommand{\ga}[0]{\gamma}
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+\renewcommand{\Tilde}[1]{\widetilde{#1}}
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem*{prop}{Proposition}
+\newtheorem*{cor}{Corollary}
+\newtheorem*{defn}{Definition}
+\newtheorem{exmp}[thm]{Example}
+
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{claim}{Claim}
+\newtheorem*{note}{Note}
+\newtheorem*{sol}{Solution}
+\newtheorem*{case}{Case}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Generative Adversarial Networks}
+\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+\parindent=0pt 
+\begin{document}
+\onehalfspace
+
+\sloppy
+\maketitle
+
+\begin{defn}
+Let $(E, \CA)$ and $(\Omega, \CM)$ be two measurable spaces. A Markov Kernel $\kappa$ with source $(E, \CA)$ and target $(\Omega, \CM)$ is a fucntion $\kappa: (E, \CM) \ra [0, 1]$ satisfying:\\
+(1) for all $x \in E$, $\kappa(x)$ defines a probability measure on $(\Omega, \CM)$;\\
+(2) for all $B \in \CM$, $\kappa(B): E \ra [0, 1]$ is $\CA$-measurable.
+\end{defn}
+
+
+Let $(\Omega, \CM, \mu_{\text{ref}})$ be a probability space. A {\bf generator} is a probability measure $\mu_G$ on $(\Omega, \CM)$, which is to mimic $\mu_{\text{ref}}$. The {\bf discriminator} is a Markov Kernel $\mu_D$ with source $(\Omega, \CM)$ and target $([0, 1], \CB([0, 1]))$, where $\CB([0, 1])$ is the Borel $\sa$. In other words: $\mu_D: \Omega \ra \CP([0, 1])$, where $\CP([0, 1])$ is the set of probability measures on $([0, 1], \CB([0, 1]))$. The discriminator is to tell either $x$ is from $\mu_{\text{ref}}$ or $\mu_G$.
+
+The objective function is
+\ali{L(\mu_G, \mu_D) = \BE_{x \sim \mu_{\text{ref}}, \ y \sim \mu_D(x)} [\ln y] + \BE_{x \sim \mu_G, \ y \sim \mu_D(x)} [\ln(1-y)].}
+
+In the first expectation, the random variable $y$ with values in $[0, 1]$ follows the distribution $\mu_D(x)$, which is the posterior given $x$, and we need $y$ concentrates around $1$. In the second expectation, $y$ follows the posterior that $x$ is from the generator, and we need $y$ to be concentrated around $0$.
+
+Therefore the generator tries to minimize $L$ and the discriminator tries to maximize $L$.
+
+\begin{prop}
+Given a generator $\mu_G$, 
+\ali{\max_{\mu_D} L(\mu_G, \mu_D) = \max_{\substack{D: \ \Omega \ra [0,1] \\ D \ \tn{measurable}}} \BE_{x \sim \mu_\tn{ref}} [\ln D(x)] + \BE_{x \sim \mu_G} [\ln(1-D(x))]}
+\end{prop}
+\begin{proof}
+Fix a generator $\mu_G$. Since $x \ra \ln(x)$ is concave, Jensen's inequality implies 
+\ali{
+    L(\mu_G, \mu_D) \leq \BE_{x \sim \mu_\tn{ref}} [\ln \BE_{y \sim \mu_D(x)} [y]] + \BE_{x \sim \mu_G} [\ln(1 - \BE_{y \sim \mu_D(x)}[y])].
+}
+Define $D(x) := \BE_{y \sim \mu_D(x)} [y]$. Since $D(x)$ is a pointwise limit of measurable simple functions, $D$ is measurable. This proves that LHS $\leq$ RHS.
+
+Conversely, suppose $D:\Omega \ra [0,1]$ is measurable. We can define $\mu_D(x) = \delta_{D(x)}$ and $\mu_D(B) = I_{D^{-1}(B)}$ is measurable on $\Omega$. This shows LHS $\geq$ RHS.
+\end{proof}
+
+We then let the discriminator be a measurable function $D: \Omega \ra [0, 1]$. In practice, the generator arises from a prior distribution $z \sim \mu_z$ on a space $\Omega_z$ and a measurable fucntion $G:\Omega_z \ra \Omega$ such that $\mu_G = G^* \mu_z$. We update the objective function
+\ali{
+    L(\mu_G, D) = \BE_{x \sim \mu_\tn{ref}} [\ln D(x)] + \BE_{x \sim \mu_G} [\ln(1-D(x))].
+}
+
+\begin{prop}
+Given a generator $\mu_G$, denote 
+\ali{
+    D^* = \tn{argmax}_{\substack{D: \ \Omega \ra [0, 1] \\ D \ \tn{measurable}}} L(\mu_G, D).
+}
+Then $D^*(x) = \frac{d\mu_\tn{ref}}{d(\mu_\tn{ref} + \mu_G)}(x)$.
+\end{prop}
+\begin{proof}
+Let $\mu = \mu_\tn{ref} + \mu_G$. Define $p_\tn{ref} = \frac{d\mu_\tn{ref}}{d\mu}$ and $p_g = \frac{d\mu_G}{d\mu}$ as the Radon-Nikodym derivatives. Note that $p_g(x) + p_\tn{ref}(x) = 1$.
+\ali{
+    L(\mu_G, D) = \int_\Omega p_\tn{ref}(x) \ln D(x) + p_g(x) \ln(1-D(x)) \ d\mu(x).
+}
+The proof is completed as for all $x$, $D(x) = p_\tn{ref}(x)$ maximizes the integrand by the Gibbs' inequality.
+\end{proof}
+
+In this way we optimize
+\ali{
+    \min_{\mu_G} \max_{D} L(\mu_G, D) = \min_{\mu_G} L(\mu_G, D^*_G),
+}
+where $D^*_G$ is given above.
+
+\begin{prop}
+$\min_{\mu_G} L(\mu_G, D^*_G)$ is achieved when $\mu_G = \mu_\tn{ref}$. In this case $D^*_G(x) = 1/2$ for all $x$.
+\end{prop}
+\begin{proof}
+Let $\mu$, $p_\tn{ref}$ and $p_g$ be as above.
+\ali{
+    L(\mu_G, D^*_G) &= \int_\Omega p_\tn{ref}(x) \ln p_\tn{ref}(x) + p_g(x) \ln p_g(x) \ d\mu(x) \\
+                    &= \KL{\mu_\tn{ref}}{\mu} + \KL{\mu_G}{\mu} \\
+                    &= 2\JS{\mu_\tn{ref}}{\mu_G} - 2\ln 2.
+}
+Hence, the minimum is obtained at $\mu_G = \mu_\tn{ref}$.
+\end{proof}
+
+Next we optimize $\max_{\mu_D} \min_{\mu_G} L(\mu_G, \mu_D)$.
+
+\begin{prop}
+We have
+\ali{
+\max_{\mu_D} \min_{\mu_G} L(\mu_G, \mu_D) = \min_{\mu_G} \max_{\mu_D} L(\mu_G, \mu_D) = -2 \ln 2
+}
+\end{prop}
+\begin{proof}
+We have 
+\ali{
+    \max_{\mu_D} \min_{\mu_G} L(\mu_G, \mu_D) \geq \max_{\mu_D} \BE_{x \sim \mu_{\text{ref}}, \ y \sim \mu_D(x)} [\ln y] + \inf_x \BE_{y \sim \mu_D(x)} [\ln(1-y)].
+}
+Similar to a previous proposition, 
+\ali{
+    &\max_{\mu_D} \BE_{x \sim \mu_{\text{ref}}, \ y \sim \mu_D(x)} [\ln y] + \inf_x \BE_{y \sim \mu_D(x)} [\ln(1-y)] \\
+= &\max_{\substack{D: \ \Omega \ra [0,1] \\ D \ \tn{measurable}}} \BE_{x \sim \mu_\tn{ref}} [\ln D(x)] + \inf_x \ln(1-D(x)).
+}
+If we put $D(x) = 1/2$ for all $x$, we get 
+\ali{
+\max_{\mu_D} \min_{\mu_G} L(\mu_G, \mu_D) \geq -2 \ln 2 = \min_{\mu_G} \max_{\mu_D} L(\mu_G, \mu_D).
+}
+\end{proof}
+
+To summarize,
+\begin{cor}
+$\mu_G^* = \mu_\tn{ref}$ and $\mu_D^* = \delta_{1/2}$ achieve the Nash equilibra:
+\ali{
+    \mu_G^* &= \tn{argmin}_{\mu_G} \ L(\mu_G, \mu_D^*) \\
+    \mu_D^* &= \tn{argmax}_{\mu_D} \ L(\mu_G^*, \mu_D).
+}
+\end{cor}
+\end{document}

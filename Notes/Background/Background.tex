@@ -1,0 +1,227 @@
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+\documentclass[12pt,oneside]{article}
+ % use larger type; default would be 10pt
+
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage{geometry}
+
+ % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+%\geometry{margins=2in} % for example, change the margins to 2 inches all round
+%\geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+%\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+%\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+
+
+
+%%% SECTION TITLE APPEARANCE
+
+ % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+%\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+%\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\usepackage[encapsulated]{CJK} 
+
+
+\usepackage{setspace}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amscd}
+\usepackage{hyperref}
+\usepackage{amsthm}
+
+\newcommand{\e}[0]{\varepsilon}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\ra}[0]{\rightarrow}
+\newcommand{\Ra}[0]{\Rightarrow}
+\newcommand{\R}[0]{\mathbb{R}}
+\newcommand{\Q}[0]{\mathbb{Q}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\D}[0]{\mathbb{D}}
+\newcommand{\BF}[0]{\mathbb{F}}
+\newcommand{\CN}[0]{\mathcal{N}}
+\newcommand{\Z}[0]{\mathbb{Z}}
+\newcommand{\C}[0]{\mathbb{C}}
+\newcommand{\CE}[0]{\mathcal{E}}
+\newcommand{\CM}[0]{\mathcal{M}}
+\newcommand{\CA}[0]{\mathcal{A}}
+\newcommand{\CP}[0]{\mathcal{P}}
+\newcommand{\CT}[0]{\mathcal{T}}
+\newcommand{\cond}[4]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \end{array} \right.}
+\newcommand{\condd}[6]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6}\end{array} \right.}
+\newcommand{\conddd}[8]{\left \{ \begin{array}{ll} #1 & \mbox{#2} \\ #3 & \mbox{#4} \\ #5 & \mbox{#6} \\ #7 & \mbox{#8} \end{array} \right.}
+\newcommand{\lams}[1]{\lambda^*(#1)}
+\newcommand{\bs}[0]{\backslash}
+\newcommand{\bM}[0]{\overline{\M}}
+\newcommand{\bmu}[0]{\overline{\mu}}
+\newcommand{\mus}[0]{\mu^*}
+\newcommand{\sa}[0]{\sigma \mbox{-algebra}}
+\newcommand{\set}[1]{\{ #1\}}
+\newcommand{\CB}[0]{\mathcal{B}}
+\newcommand{\CG}[0]{\mathcal{G}}
+\newcommand{\CF}[0]{\mathcal{F}}
+\newcommand{\CU}[0]{\mathcal{U}}
+\newcommand{\CL}[0]{\mathcal{L}}
+\newcommand{\FA}[0]{\mathfrak{A}}
+\newcommand{\BT}[0]{\mathbb{T}}
+\newcommand{\BI}[0]{\mathbb{I}}
+\newcommand{\BE}[0]{\mathbb{E}}
+\newcommand{\eK}[1]{\e\mbox{-Kronecker}(#1)}
+\newcommand{\eKG}[0]{\e\mbox{-Kronecker}}
+\newcommand{\KL}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont KL}}(#1 \ || \ #2)}
+\newcommand{\JS}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont JS}}(#1 \ || \ #2)}
+
+\newcommand{\IN}[1]{I_0(#1)}
+\newcommand{\ING}[0]{I_0}
+\newcommand{\st}[0]{such that }
+\newcommand{\CS}[0]{\mathcal{S}}
+\newcommand{\CC}[0]{\mathcal{C}}
+\newcommand{\tn}[1]{\text{\normalfont #1}}
+
+
+
+\newcommand{\bmp}[1]{\overline{M}^+(#1)}
+\newcommand{\simplep}[2]{S_{#1}^+(#2)}
+\newcommand{\simple}[2]{S_{#1}(#2)}
+\newcommand{\sumf}[2]{\sum_{#1 = #2}^\infty}
+\newcommand{\bigcapf}[2]{\bigcap_{#1 = #2}^\infty}
+\newcommand{\bigcupf}[2]{\bigcup_{#1 = #2}^\infty}
+\newcommand{\limf}[1]{\lim_{#1 \ra \infty}}
+\newcommand{\seq}[2]{\set{#1_{#2}}_{#2=1}^\infty}
+\newcommand{\sg}[1]{\sigma\langle#1\rangle}
+\newcommand{\ag}[1]{\langle#1\rangle}
+\newcommand{\g}[1]{\langle#1\rangle}
+\newcommand{\inte}[0]{\mbox{int}}
+\newcommand{\Cl}[0]{\mbox{cl}}
+\newcommand{\bd}[0]{\mbox{bd}}
+\newcommand{\inv}[1]{{#1}^{-1}}
+\newcommand{\Aut}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Aut}}}
+\newcommand{\Gal}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Gal}}}
+\newcommand{\Bor}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Bor}}}
+\newcommand{\Meas}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Meas}}}
+\newcommand{\ball}[2]{\mbox{{\renewcommand*\rmdefault{}\normalfont B}}_{#1}({#2})}
+\newcommand{\supp}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont supp}}}
+\newcommand{\Trig}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont Trig}}}
+\newcommand{\sign}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont sign}}}
+\newcommand{\AP}[0]{\mbox{{\renewcommand*\rmdefault{}\normalfont AP}}}
+
+\newcommand{\ali}[1]{\begin{align*}#1\end{align*}}
+\newcommand{\zhongwen}[1]{\begin{CJK}{UTF8}{gbsn}#1\end{CJK}}
+\renewcommand{\Bar}[1]{\overline{#1}}
+\renewcommand{\Hat}[1]{\widehat{#1}}
+\newcommand{\Ga}[0]{\Gamma}
+\newcommand{\ga}[0]{\gamma}
+\newcommand{\inner}[2]{\left\langle #1, #2 \right\rangle}
+\renewcommand{\Tilde}[1]{\widetilde{#1}}
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[subsection]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem*{defn}{Definition}
+
+
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{claim}{Claim}
+\newtheorem*{note}{Note}
+\newtheorem*{sol}{Solution}
+\newtheorem*{case}{Case}
+
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+\title{Background}
+\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+\parindent=0pt 
+\begin{document}
+\onehalfspace
+
+\sloppy
+\maketitle
+\subsection*{Random Variables}
+A real-valued {\it Random Variable} is a measurable function $X: E \ra \R$ from a probability space $(E, \CA, \nu)$ to the measure space $(\R, \CB, \lambda)$. 
+
+Let $\mu_X$ be the push-forward $X^*\nu = \nu X^{-1}$. We call $\mu_X$ the distribution of $X$, denoted by $X \sim \mu_X$. This means for all $B \in \CB$, 
+\ali{\nu(X^{-1}(B)) = \mu_X(B).} 
+
+By the Law of Unconscious Statistician, 
+\ali{\BE_{X \sim \mu_X}[X] = \int_\R x \ d\mu_X(x).}
+
+More generally, if $f: \R \ra \R$ is a measurable function, then 
+\ali{\BE_{X \sim \mu_X}[f(X)] = \int_\R f(x) \ d\mu_X(x).}
+
+In case $\mu_X$ is absolute continuous with respect to $\lambda$, we let 
+\ali{p_X = \frac{d\mu_X}{d\lambda} \in L^1(\R, \lambda)}
+be the Radon-Nikodym derivative, and denote by $X \sim p_X$ with 
+\ali{\BE_{X \sim p_X} [f(X)] = \int_\R f(x)p_X(x) \ d\lambda(x)}
+for $f: \R \ra \R$ measurable. $p_X$ is the density function.
+
+If $X$ is a random variable with values in a measure space, that is, $X: E \ra \Omega$ is a measurable function from a probability space $(E, \CA, \nu)$ to a measure space $(\Omega, \CM, \mu)$. Let $\mu_X = X^*\nu$ be the push-forward probability measure on $\Omega$, which is denoted by $X \sim \mu_X$.
+
+$X$ itself does not have an expected value in general. If $f: \Omega \ra (\R, \CB, \lambda)$ is measurable, then 
+\ali{\BE_{X \sim \mu_X}[f(X)] = \int_{\Omega} f(x) \ d\mu_X(x).}
+Moreover, if $\mu_X$ is absolute continuous with respect to $\mu$, then we let 
+\ali{p_X = \frac{d\mu_X}{d\mu} \in L^1(\Omega, \mu)}
+be the Radon-Nikodym derivative, and we have, for $f: \Omega \ra (\R, \CB, \lambda)$ measurable,
+\ali{\BE_{X \sim p_X} [f(X)] = \int_\Omega f(x)p_X(x) \ d\mu(x).}
+
+\subsection*{Entropy}
+\begin{defn}
+Let $(\Omega, \CM)$ be a measurable space and $P$ and $Q$ be two probability measures on $\Omega$. Suppose $P$ is absolute continuous with respect to $Q$ (ie. $P \ll Q$). The Kullback-Leibler divergence (or K-L divergence, relative entropy), is defined as 
+\ali{\KL{P}{Q} = \int_\Omega \log\left(\frac{dP}{dQ}(x)\right) \ dP(x),}
+where $\frac{dP}{dQ} \in L^1(\Omega, Q)$ is the Radon-Nikodym derivative. 
+
+More generally, suppose $P$ and $Q$ are both absolute continuous with respect to another measure $\mu$ (ie. $P \ll Q$ may not hold), we let $p = \frac{dP}{d\mu}$ and $q = \frac{dQ}{d\mu}$, both of which are in $L^1(\mu)$, and define
+\ali{\KL{P}{Q} := \int_\Omega \log\left(\frac{p(x)}{q(x)}\right) p(x) \ d\mu(x).}
+Note that such a measure $\mu$ always exists since we can put $\mu = \frac{P+Q}{2}$. 
+\end{defn}
+
+Note that $\KL{P}{Q} \geq 0$ because of Gibbs' inequality: Suppose $\set{p_1, p_2,..., p_n}$ and $\set{q_1, q_2,..., q_n}$ are discrete probability densities. Then
+\ali{\sum_i p_i \log q_i \leq \sum_i p_i \log p_i,}
+with equality if and only if $p_i = q_i$. Hence, $\KL{P}{Q} = 0$ if and only if $P = Q$ as measures or $p(x) = q(x)$ $\mu$-a.e.
+
+\begin{defn}
+Let $P$ and $Q$ be as above. Let $M = \frac{P+Q}{2}$. The Jensen-Shannon divergence is defined as 
+\ali{\JS{P}{Q} := \frac{1}{2} \ \KL{P}{M} + \frac{1}{2} \ \KL{Q}{M}.}
+\end{defn}
+
+Note that $\JS{P}{Q} \geq 0$. It is known that $\JS{P}{Q} \leq \log 2$.
+
+
+\end{document}
