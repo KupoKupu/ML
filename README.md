@@ -16,6 +16,9 @@
   <ol>
     <li>
       <a href="#neural-networks">Neural Networks</a>
+      <ul>
+        <li><a href="#transformer">Transformer</a></li>
+      </ul>
     </li>
     <li>
       <a href="#generative-models">Generative Models</a>
@@ -36,11 +39,23 @@
 
 <!-- NEURAL NETWORKS -->
 ## Neural Networks
+Several popular neural networks are implemented using Pytorch:
+<li><a href="Code/ML_classification/MLP.py">Fully Connected Neural Network</a></li>
+<li><a href="Code/ML_classification/CNN.py">Convolutional Neural Network  </a></li>
+<li><a href="Code/ML_classification/RNN.py">Recurrent Neural Network  </a></li>
+<li><a href="Code/ML_classification/ResNet.py">ResNet </a></li>
+<li><a href="Code/ML_classification/UNet.py">U-Net </a></li>
+<li><a href="Code/ML_classification/Self_attention.py">Self-attention</a></li>
+<li><a href="Code/ML_classification/ViT.py">Video Transformer</a></li><br>
+The models are experimented on image classification tasks. For comparison, a <a href="Code/ML_classification/Bayes.py">naive Bayes model</a> is also implemented.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+### Transformer
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GENERATIVE MODELS -->
 ## Generative Models
