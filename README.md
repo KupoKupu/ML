@@ -54,6 +54,8 @@ The models are experimented on image classification tasks. For comparison, a <a 
 
 
 ### Transformer
+Transformer architecture is based on the paper <a href="https://arxiv.org/abs/1706.03762">"Attention Is All You Need"</a>. The architecture is implemented for an English-Chinese translator. <a href="https://spacy.io/">spaCy</a> is used for word embedding. Both greedy and beam search are implemented for word selection.<br>
+Implementation can be found <a href="/Code/Translator/">here</a>.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
