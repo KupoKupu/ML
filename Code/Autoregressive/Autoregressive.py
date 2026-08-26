@@ -104,10 +104,10 @@ def save():
     }
     torch.save(cp, 'AR.pth')
 
-# AR.train()
-# load()
-# train(train_dataloader)
-# save()
+AR.train()
+load()
+train(train_dataloader)
+save()
 
 AR.eval()
 load()
