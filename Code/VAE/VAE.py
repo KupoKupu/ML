@@ -114,17 +114,27 @@ def train(dataloader):
                 running_loss = 0.
             i += 1
 
-# model.train()
-# model.load_state_dict(torch.load('VAE.pth', weights_only=True))
-# train(train_dataloader)
-# torch.save(model.state_dict(), 'VAE.pth')
+model.train()
+model.load_state_dict(torch.load('VAE.pth', weights_only=True))
+train(train_dataloader)
+torch.save(model.state_dict(), 'VAE.pth')
 
 model.eval()
+
 model.load_state_dict(torch.load('VAE.pth', weights_only=True))
 
-with torch.no_grad():
-    noise = torch.randn(8, 1024).to(device)
-    generated_images = model.ProbDecoder(noise).view(8, 28, 28)
-    plt.imshow(generated_images[0].cpu().numpy())
+
+def sample(n):
+    x0 = torch.randn(n ** 2, 1024).to(device)
+    out = model.ProbDecoder(x0).view(-1, 28, 28)
+    fig = plt.figure()
+    columns = n
+    rows = n
+    for i in range(1, columns * rows + 1):
+        img = out[i - 1].cpu().detach().numpy()
+        fig.add_subplot(rows, columns, i)
+        plt.imshow(img)
+        plt.axis('off')
     plt.show()
 
+sample(5)

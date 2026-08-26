@@ -2,7 +2,6 @@ import torch
 from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
-from torchvision.transforms import ToTensor
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from pathlib import Path
@@ -27,7 +26,6 @@ train_data = datasets.MNIST(
 )
 
 # train_data = train_data.data[train_data.targets == 6]
-
 
 train_dataloader = DataLoader(train_data, batch_size=300, shuffle=True)
 
@@ -61,9 +59,9 @@ class NADE(nn.Module):
         for i in range(28 * 28):
             h = self.sigmoid(self.W(x))
             next_theta = self.sigmoid(self.linears[i](h))
-            next = torch.bernoulli(next_theta)
+            next_one = torch.bernoulli(next_theta)
             theta[0][i] = next_theta[0]
-            x[0][i] = next
+            x[0][i] = next_one
         return x, theta
 
 
@@ -87,7 +85,7 @@ def train(dataloader):
             optimizer.step()
             running_loss += loss.item()
             if i % 50 == 49:
-                last_loss = running_loss / (50 * X.size()[0]) # loss per batch
+                last_loss = running_loss / (50 * X.size()[0])
                 print('  batch {} loss: {}'.format(i + 1, last_loss))
                 running_loss = 0.
             i += 1
@@ -114,9 +112,18 @@ def save():
 AR.eval()
 load()
 
-out = AR.sample()[1].view(28, 28)
-fig = plt.figure()
-img = out.cpu().detach().numpy()
-plt.imshow(img)
-plt.axis('off')
-plt.show()
+def sample(n):
+    out = torch.zeros(n ** 2, 28, 28).to(device)
+    for i in range(n ** 2):
+        out[i] = AR.sample()[1].view(28, 28)
+    fig = plt.figure()
+    columns = n
+    rows = n
+    for i in range(1, columns * rows + 1):
+        img = out[i - 1].cpu().detach().numpy()
+        fig.add_subplot(rows, columns, i)
+        plt.imshow(img)
+        plt.axis('off')
+    plt.show()
+
+sample(5)

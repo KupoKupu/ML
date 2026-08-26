@@ -107,25 +107,25 @@ def train(epoches, time_steps, dataloader):
 def step(x, t, z):
     ep = Epsilon(x, t)
     scheduler = Scheduler(1000)
-    beta = scheduler.beta[t].view(-1, 1, 1, 1)
-    bar_alpha = scheduler.alpha[t].view(-1, 1, 1, 1)
+    beta = scheduler.beta[t].view(-1, 1, 1, 1).detach()
+    bar_alpha = scheduler.alpha[t].view(-1, 1, 1, 1).detach()
     out = 1 / torch.sqrt(1 - beta) * (x - beta / torch.sqrt(1 - bar_alpha)
                                  * ep) + torch.sqrt(beta) * z
-    out = out.to(device)
+    out = out.to(device).detach()
     return out
 
 def generate(x_T, T):
     t = T-1
     x_t = x_T
     while t > 0:
-        z = torch.randn_like(x_t).to(device)
+        z = torch.randn_like(x_t).to(device).detach()
         x_t = step(x_t, t, z)
         t = t - 1
     out = step(x_t, t, torch.zeros_like(x_t).to(device))
     return out
 
-# Epsilon.train()
-# train(100, 1000, train_loader)
+Epsilon.train()
+train(100, 1000, train_loader)
 
 Epsilon.eval()
 savings = torch.load('Ep_savings')
@@ -134,12 +134,21 @@ ema = ModelEmaV3(Epsilon, decay=0.999)
 ema.load_state_dict(savings['ema'])
 Epsilon = ema.module.eval()
 
-for i in range(10):
-    x_T = torch.randn(1, 1, 28, 28).to(device)
-    out = generate(x_T, 1000)[0, 0]
-    plt.imshow(out.detach().cpu().numpy())
+
+def sample(n):
+    xT = torch.randn(n ** 2, 1, 28, 28).to(device)
+    out = generate(xT, 1000).view(-1, 28, 28)
+    fig = plt.figure()
+    columns = n
+    rows = n
+    for i in range(1, columns * rows + 1):
+        img = out[i - 1].cpu().detach().numpy()
+        fig.add_subplot(rows, columns, i)
+        plt.imshow(img)
+        plt.axis('off')
     plt.show()
 
+sample(5)
 
 
 

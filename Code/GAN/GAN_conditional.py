@@ -147,13 +147,13 @@ def train(num_epochs, G_update_times, D_update_times):
         print("Discriminator on real:", Real / len(train_data))
         print("Discriminator on fake:", Fake / len(train_data))
 
-# D.load_state_dict(torch.load('D_weights_c.pth'))
-# G.load_state_dict(torch.load('G_weights_c.pth'))
-#
-# train(100, 1, 1)
-#
-# torch.save(D.state_dict(), 'D_weights_c.pth')
-# torch.save(G.state_dict(), 'G_weights_c.pth')
+D.load_state_dict(torch.load('D_weights_c.pth'))
+G.load_state_dict(torch.load('G_weights_c.pth'))
+
+train(100, 1, 1)
+
+torch.save(D.state_dict(), 'D_weights_c.pth')
+torch.save(G.state_dict(), 'G_weights_c.pth')
 
 G.eval()
 G.load_state_dict(torch.load('G_weights_c.pth', weights_only=True))

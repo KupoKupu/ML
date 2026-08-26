@@ -2,19 +2,9 @@ import torch
 from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
-from torchvision.transforms import ToTensor
-from torch.utils.data import random_split
 import matplotlib.pyplot as plt
 from torch import distributions
-import torch.nn.functional as F
-from einops import rearrange
-import math
-import numpy as np
 from tqdm import tqdm
-import random
-import torch.optim as optim
-from timm.utils import ModelEmaV3
-from typing import List
 from batch_norm import MyBatchNorm2d
 
 if torch.cuda.is_available():
@@ -155,8 +145,6 @@ class FlowNVP(nn.Module):
             x, log_det = layer(x)
             log_det_out += log_det
         neg_log_p = - log_det_out - self.std_normal.log_prob(x.view(-1, 28 * 28))
-        # print("-det:", -log_det_out.sum())
-        # print("-log p(x):", -self.std_normal.log_prob(x).sum())
         return x, neg_log_p
 
     def inverse(self, x):
@@ -195,25 +183,27 @@ checkpoint = torch.load('checkpoint.pth')
 model.load_state_dict(checkpoint['model_state_dict'])
 optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
-# train(train_loader)
-#
-# checkpoint = {
-#     'model_state_dict': model.state_dict(),
-#     'optimizer_state_dict': optimizer.state_dict(),
-# }
-# torch.save(checkpoint, 'checkpoint.pth')
+train(train_loader)
+
+checkpoint = {
+    'model_state_dict': model.state_dict(),
+    'optimizer_state_dict': optimizer.state_dict(),
+}
+torch.save(checkpoint, 'checkpoint.pth')
 
 model.eval()
 
-with torch.no_grad():
-    noise = torch.Tensor(torch.normal(torch.zeros(1, 28 * 28),
-                                  torch.ones(1, 28 * 28))).to(device)
-    x = torch.squeeze(train_data[0]).to(device)
-    original_image = x.view(28, 28)
-    y = model(x)[0]
-    generated_images = model.inverse(noise).view(1, 28, 28)
-    generated_images = torch.clip(generated_images, min=0, max=1)
-    plt.imshow(generated_images[0].cpu().numpy())
+def sample(n):
+    x0 = torch.randn(n ** 2, 1, 28, 28).to(device)
+    out = model.inverse(x0).view(-1, 28, 28)
+    fig = plt.figure()
+    columns = n
+    rows = n
+    for i in range(1, columns * rows + 1):
+        img = out[i - 1].cpu().detach().numpy()
+        fig.add_subplot(rows, columns, i)
+        plt.imshow(img)
+        plt.axis('off')
     plt.show()
-    # plt.imshow(original_image.cpu().numpy())
-    # plt.show()
+
+sample(5)

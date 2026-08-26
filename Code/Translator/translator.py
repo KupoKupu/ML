@@ -60,7 +60,7 @@ def is_zh(char):
             return True
     return False
 
-def test_zh(line):  # test if line contains at least one Chinese character
+def test_zh(line):
     for char in line:
         if is_zh(char):
             return True
@@ -140,20 +140,18 @@ class Transformer(nn.Module):
         self.softmax = nn.LogSoftmax(dim=-1)
 
     def forward(self, input, target, trg_mask, src_padding_mask, trg_padding_mask):
-        src_input = self.positional_encoder(input) # (B, L, d_model) => (B, L, d_model)
+        src_input = self.positional_encoder(input)
         trg_input = self.positional_encoder(target)
         output = self.transformer(src_input, trg_input, tgt_mask=trg_mask,
                                   src_key_padding_mask=src_padding_mask,
-                                  tgt_key_padding_mask=trg_padding_mask) # (B, L, d_model) => # (B, L, trg_vocab_size)
+                                  tgt_key_padding_mask=trg_padding_mask)
         output = self.softmax(self.fc(output))
         return output
 
 class PositionalEncoder(nn.Module):
     def __init__(self):
         super().__init__()
-        # Make initial positional encoding matrix with 0
-        pe_matrix= torch.zeros(seq_len, emb_dim) # (L, d_model)
-        # Calculating position encoding values
+        pe_matrix= torch.zeros(seq_len, emb_dim)
         for pos in range(seq_len):
             for i in range(emb_dim):
                 if i % 2 == 0:
@@ -164,8 +162,8 @@ class PositionalEncoder(nn.Module):
         self.positional_encoding = pe_matrix.to(device).requires_grad_(False)
 
     def forward(self, x):
-        x = x * math.sqrt(emb_dim) # (B, L, d_model)
-        x = x + self.positional_encoding # (B, L, d_model)
+        x = x * math.sqrt(emb_dim)
+        x = x + self.positional_encoding
         return x
 
 def look_ahead_mask(size):
@@ -306,7 +304,6 @@ def start_infer(line, beam_size):
     model.eval()
     return inference_beam(model, line, beam_size)
 
+start_train(10)
 
-
-# start_train(10)
-print(start_infer("As you can see, we have height and width at each block.", 10))
+print(start_infer("Canada announces retaliatory tariffs on US goods.", 10))

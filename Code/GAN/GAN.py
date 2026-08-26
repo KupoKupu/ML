@@ -20,7 +20,7 @@ train_data = datasets.MNIST(
     transform=ToTensor()
 )
 
-train_data = train_data.data[train_data.targets == 7]
+train_data = train_data.data[train_data.targets == 6]
 
 dataloader = DataLoader(train_data, batch_size=32, shuffle=True)
 
@@ -84,7 +84,7 @@ def train(num_epochs, G_update_times, D_update_times):
         print("Discriminator on fake:", Fake / len(train_data))
 
 
-train(100, 1, 1)
+train(150, 1, 1)
 torch.save(D.state_dict(), 'D_weights.pth')
 torch.save(G.state_dict(), 'G_weights.pth')
 
@@ -93,14 +93,18 @@ D.load_state_dict(torch.load('D_weights.pth', weights_only=True))
 G.eval()
 G.load_state_dict(torch.load('G_weights.pth', weights_only=True))
 
-noise = torch.normal(0, 1, size=(25, 1024)).to(device)
-out = G(noise).view(-1, 28, 28)
-fig = plt.figure()
-columns = 5
-rows = 5
-for i in range(1, columns * rows + 1):
-    img = out[i-1].cpu().detach().numpy()
-    fig.add_subplot(rows, columns, i)
-    plt.imshow(img)
-plt.show()
+def sample(n):
+    x0 = torch.randn(n ** 2, 1024).to(device)
+    out = G(x0).view(-1, 28, 28)
+    fig = plt.figure()
+    columns = n
+    rows = n
+    for i in range(1, columns * rows + 1):
+        img = out[i - 1].cpu().detach().numpy()
+        fig.add_subplot(rows, columns, i)
+        plt.imshow(img)
+        plt.axis('off')
+    plt.show()
+
+sample(5)
 

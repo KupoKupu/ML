@@ -112,8 +112,8 @@ def train(epoches, dataloader):
 
 model.train()
 load()
-# train(100, train_loader)
-# save()
+train(100, train_loader)
+save()
 
 model.eval()
 
@@ -137,4 +137,4 @@ def sample(n, n_iters, ep):
         plt.axis('off')
     plt.show()
 
-sample(10, 500, 1e-2)
+sample(5, 500, 1e-2)
