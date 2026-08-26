@@ -1,4 +1,3 @@
-# importing Packages from tkinter
 import sys
 import os
 import tkinter
