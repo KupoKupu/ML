@@ -31,7 +31,11 @@
         <li><a href="#generative-adversarial-networks">Generative Adversarial Networks</a></li>
       </ul>
     </li>
-    <li><a href="#reinforcement-learning">Reinforcement Learning</a></li>
+    <li><a href="#reinforcement-learning">Reinforcement Learning</a>
+    <ul>
+        <li><a href="#generalized-tictactoe-game">Generalized TicTacToe Game</a></li>
+      </ul>
+    </li>
   </ol>
 </details>
 
@@ -221,6 +225,14 @@ In contrast, policy-based learning directly optimizes the agent's strategy, the 
 The actor-critic method combines both strengths: an "actor" updates the policy based on directional guidance from a "critic," which simultaneously evaluates the action's value to reduce training variance and accelerate convergence. <br>
 
 The set of <a href="/Notes/Reinforcement Learning/Reinforcement Learning.pdf">study notes</a> contains value-based learning (Q-learning), policy-based learning and actor-critic method (with baseline).<br>
+
+### Generalized TicTacToe Game
+
+TicTacToe game is generalized to $n \times n$ (rather than $3 \times 3$ as in the vanilla game) as well as winning condition: first get $m$ consecutive pieces. Here $n \geq m$ can be user defined. <br>
+
+I attempted to train a neural network competing with human players. The references are <a href="https://en.wikipedia.org/wiki/AlphaGo">AlphaGo</a> and <a href="https://www.nature.com/articles/nature24270">AlphaGo-Zero</a>, where I borrowed the algorithm of  Monte-Carlo tree search. <br>  
+
+Two versions are implemented: <a href="/Code/TicTacToe/TicTacToe.py">TicTacToe</a> and <a href="/Code/TicTacToe/TicTacToe_Zero.py">TicTacToe_Zero</a>. Main difference is that TicTacToe involves behavior learning, while TicTacToe_Zero relies on Monte-Carlo tree search.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
