@@ -100,7 +100,7 @@ Details are in <a href="/Notes/Flow/Flow.pdf">study notes</a>.<br>
 
 A Real-NVP model is implemented <a href="/Code/Flow/Flow.py">here</a>. <br>
 
-Referencing paper: <a href="https://arxiv.org/abs/1605.08803">"Density estimation using Real NVP"</a><br>
+Reference paper: <a href="https://arxiv.org/abs/1605.08803">"Density estimation using Real NVP"</a><br>
 
 Samples generated (MNIST dataset digit 6):
 
@@ -117,7 +117,7 @@ Details are in <a href="/Notes/Autoregressive/Autoregressive.pdf">study notes</a
 
 A NADE model is implemented <a href="/Code/Autoregressive/Autoregressive.py">here</a>. <br>
 
-Referencing paper: <a href="https://arxiv.org/abs/1605.02226">"Neural Autoregressive Distribution Estimation"</a><br>
+Reference paper: <a href="https://arxiv.org/abs/1605.02226">"Neural Autoregressive Distribution Estimation"</a><br>
 
 Samples generated (MNIST dataset):
 
@@ -134,7 +134,7 @@ Details are in <a href="/Notes/VAE/VAE.pdf">study notes</a>.<br>
 
 Both <a href="/Code/VAE/VAE.py">unconditional</a> and <a href="/Code/VAE/VAE_conditional.py">conditional</a> models are implemented. <br>
 
-Referencing paper: <a href="https://arxiv.org/abs/1312.6114">"Auto-Encoding Variational Bayes"</a><br>
+Reference paper: <a href="https://arxiv.org/abs/1312.6114">"Auto-Encoding Variational Bayes"</a><br>
 
 Samples generated from unconditional model (MNIST dataset digit 6):
 
@@ -158,7 +158,7 @@ Details are in <a href="/Notes/Diffusion/Diffusion.pdf">study notes</a>.<br>
 
 The model is implemented <a href="/Code/Diffusion/Diffusion.py">here</a>. <br>
 
-Referencing paper: <a href="https://arxiv.org/abs/2006.11239">"Denoising Diffusion Probabilistic Models"</a><br>
+Reference paper: <a href="https://arxiv.org/abs/2006.11239">"Denoising Diffusion Probabilistic Models"</a><br>
 
 Samples generated (MNIST dataset):
 
@@ -175,7 +175,7 @@ Score-based generative models estimate the vector field of the data distribution
 
 Details are in <a href="/Notes/Score Matching/Score Matching.pdf">study notes</a>. The model is implemented <a href="/Code/Score_Matching/score_matching.py">here</a>. <br>
 
-Referencing papers: <a href="https://jmlr.org/papers/v6/hyvarinen05a.html">"Estimation of Non-Normalized Statistical Models by Score Matching"</a><br>
+Reference papers: <a href="https://jmlr.org/papers/v6/hyvarinen05a.html">"Estimation of Non-Normalized Statistical Models by Score Matching"</a><br>
 <a href="https://arxiv.org/abs/2011.13456">"Score-Based Generative Modeling through Stochastic Differential Equations"</a><br>
 
 Samples generated (MNIST dataset):
@@ -194,7 +194,7 @@ Details are in <a href="/Notes/GAN/GAN.pdf">study notes</a>. (This set of notes 
 
 Both <a href="/Code/GAN/GAN.py">unconditional</a> and <a href="/Code/GAN/GAN_conditional.py">conditional</a> models are implemented. <br>
 
-Referencing paper: <a href="https://arxiv.org/abs/1406.2661">"Generative Adversarial Networks"</a><br>
+Reference paper: <a href="https://arxiv.org/abs/1406.2661">"Generative Adversarial Networks"</a><br>
 
 Samples generated from unconditional model (MNIST dataset digit 6):
 
